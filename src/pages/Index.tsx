@@ -83,7 +83,7 @@ const Index = () => {
             </div>
             {/* Price Tag */}
             <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-primary text-primary-foreground px-4 py-2 sm:px-6 sm:py-3 rounded-full font-black text-lg sm:text-xl shadow-cta transform rotate-12 animate-wiggle">
-              APENAS R$ 10,00
+              ATUALIZE SEU ENSINO
             </div>
           </div>
         </div>
