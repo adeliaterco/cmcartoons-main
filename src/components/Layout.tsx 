@@ -6,6 +6,23 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   useEffect(() => {
+    // ========================================
+    // 🎯 PIXEL DA UTMIFY (RASTREAMENTO DE UTMs)
+    // ========================================
+    if (typeof window !== 'undefined') {
+      (window as any).pixelId = "6958552db15cc93a035a8d66";
+      const utmifyScript = document.createElement("script");
+      utmifyScript.setAttribute("async", "");
+      utmifyScript.setAttribute("defer", "");
+      utmifyScript.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(utmifyScript);
+      console.log('✅ Pixel Utmify carregado');
+    }
+
+    // ========================================
+    // 🎯 PIXELS DE RASTREAMENTO - PAGEVIEW
+    // ========================================
+    
     // Facebook Pixel - PageView
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'PageView');
