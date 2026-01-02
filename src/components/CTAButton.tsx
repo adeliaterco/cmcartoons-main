@@ -76,13 +76,13 @@ const CTAButton = ({ text, variant = "primary", className = "", onClick }: CTABu
     }
 
     // ========================================
-    // 🔗 AÇÃO ORIGINAL DO BOTÃO
+    // 🔗 REDIRECIONAMENTO PARA CHECKOUT HOTMART
     // ========================================
-    // Mantém a funcionalidade original do botão
     if (onClick) {
       onClick();
     } else {
-      window.open("#comprar", "_self");
+      // ⬇️ LINK DO HOTMART INSERIDO
+      window.location.href = 'https://pay.hotmart.com/Y103259745G?off=scobwn0k';
     }
   };
 
