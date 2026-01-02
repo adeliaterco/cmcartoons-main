@@ -6,10 +6,6 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   useEffect(() => {
-    // ========================================
-    // 🎯 INICIALIZAÇÃO DE PIXELS APÓS CARREGAMENTO
-    // ========================================
-    
     // Facebook Pixel - PageView
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'PageView');
@@ -30,7 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
       console.log('✅ TikTok Pixel: PageView disparado');
     }
 
-    // Google Tag Manager - PageView customizado (opcional)
+    // Google Tag Manager - PageView customizado
     if (typeof window !== 'undefined' && (window as any).dataLayer) {
       (window as any).dataLayer.push({
         event: 'pageview',
@@ -39,34 +35,12 @@ const Layout = ({ children }: LayoutProps) => {
       console.log('✅ GTM: PageView customizado disparado');
     }
 
-  }, []); // Executa apenas uma vez quando o componente monta
+  }, []);
 
   return (
-    <>
-      {/* 
-        ========================================
-        ESTRUTURA GLOBAL DO LAYOUT
-        ========================================
-        Aqui você pode adicionar elementos que aparecem em TODAS as páginas:
-        - Header fixo
-        - Menu de navegação
-        - Chat/Suporte flutuante
-        - Cookie consent banner
-      */}
-
-      {/* Conteúdo Principal - Suas páginas serão renderizadas aqui */}
-      <main className="min-h-screen">
-        {children}
-      </main>
-
-      {/* 
-        ========================================
-        ELEMENTOS GLOBAIS DE RODAPÉ (OPCIONAL)
-        ========================================
-        Se você quiser um footer em TODAS as páginas, adicione aqui.
-        Caso contrário, deixe cada página com seu próprio footer.
-      */}
-    </>
+    <main className="min-h-screen">
+      {children}
+    </main>
   );
 };
 
