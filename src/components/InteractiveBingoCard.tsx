@@ -51,9 +51,12 @@ const InteractiveBingoCard = () => {
             key={index}
             onClick={() => handleCellClick(item)}
             className={`
-              bingo-cell aspect-square flex items-center justify-center text-xs sm:text-sm md:text-base
+              bingo-cell
               ${selectedCell?.term === item.term ? "bingo-cell-selected" : ""}
             `}
+            style={{
+              aspectRatio: '1 / 1'
+            }}
           >
             {item.term}
           </button>
