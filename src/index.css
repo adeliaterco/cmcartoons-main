@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fontsource/nunito';
+@import '@fontsource/nunito/700.css';
+@import '@fontsource/nunito/800.css';
+@import '@fontsource/nunito/900.css';
+
+@layer base {
+  :root {
+    /* Warm cream background */
+    --background: 40 33% 98%;
+    --foreground: 220 20% 20%;
+
+    /* Cards with white */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    /* Primary: Vibrant Red for CTAs */
+    --primary: 4 84% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 4 84% 42%;
+
+    /* Secondary: Educational Blue */
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted tones */
+    --muted: 40 20% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent: Playful Yellow/Orange */
+    --accent: 43 96% 56%;
+    --accent-foreground: 220 20% 15%;
+
+    /* Success Green */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 40 30% 88%;
+    --input: 40 30% 88%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors for the page */
+    --math-orange: 28 95% 55%;
+    --math-teal: 174 72% 40%;
+    --math-pink: 340 82% 62%;
+
+    /* Sidebar - keeping defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 20% 14%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 20% 14%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 4 84% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 4 84% 48%;
+
+    --secondary: 199 89% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 40 15% 65%;
+
+    --accent: 43 96% 60%;
+    --accent-foreground: 220 20% 10%;
+
+    --success: 142 71% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 22%;
+    --input: 220 20% 22%;
+    --ring: 199 89% 60%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Nunito', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-cta {
+    @apply bg-primary text-primary-foreground font-bold py-4 px-8 rounded-xl text-lg
+           shadow-cta hover:bg-primary-hover transform hover:scale-105 
+           transition-all duration-300 ease-out;
+  }
+
+  .card-interactive {
+    @apply bg-card rounded-2xl shadow-md hover:shadow-lg 
+           transition-all duration-300 cursor-pointer border border-border;
+  }
+
+  .card-interactive-active {
+    @apply ring-2 ring-primary shadow-lg;
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .bingo-cell {
+    @apply bg-card border-2 border-secondary/30 rounded-lg p-2 sm:p-3 text-center font-semibold
+           cursor-pointer transition-all duration-200 hover:border-primary hover:bg-primary/5
+           hover:scale-105 active:scale-95 text-xs sm:text-sm;
+  }
+
+  .bingo-cell-selected {
+    @apply border-primary bg-primary/10 ring-2 ring-primary/30;
+  }
+}
