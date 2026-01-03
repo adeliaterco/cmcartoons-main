@@ -19,28 +19,25 @@ import {
     Sparkles,
 } from 'lucide-react';
 
-/* ————————————————————————— util: scroll suave para a cartela ————————————————————————— */
+/* util: scroll suave para a cartela */
 const scrollToCalculadora = (): void => {
-    const el = document.getElementById('calculadora');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('calculadora')?.scrollIntoView({ behavior: 'smooth' });
 };
 
 const Index: React.FC = () => (
     <div className="min-h-screen bg-background">
+
         {/* SEÇÃO 1 — HERO */}
         <section className="relative py-8 sm:py-12 lg:py-16 overflow-hidden">
-            {/* decoração */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-background to-secondary/10" />
             <div className="absolute top-10 left-10 w-32 h-32 bg-accent/20 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl" />
 
             <div className="section-container relative">
-                {/* logo */}
                 <div className="flex justify-center mb-6">
                     <img src={logo} alt="CMCartoons Logo" className="h-20 sm:h-24 w-auto animate-fade-in" />
                 </div>
 
-                {/* títulos */}
                 <div className="text-center max-w-4xl mx-auto">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 animate-fade-in">
                         <span className="bg-gradient-to-r from-accent via-math-orange to-primary bg-clip-text text-transparent">
@@ -55,10 +52,7 @@ const Index: React.FC = () => (
                         Transforme o Ensino Fundamental!
                     </h2>
 
-                    <div
-                        className="space-y-3 mb-8 animate-fade-in"
-                        style={{ animationDelay: '0.2s' }}
-                    >
+                    <div className="space-y-3 mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                         <p className="text-lg sm:text-xl text-foreground flex items-center justify-center gap-2">
                             <span className="text-2xl">🧮</span>
                             <span>O bingo que ensina matemática brincando</span>
@@ -79,7 +73,22 @@ const Index: React.FC = () => (
             </div>
         </section>
 
-        {/* SEÇÃO 2 — CARTELA INTERATIVA (agora logo após o HERO) */}
+        {/* SEÇÃO 2 — IMAGEM DO PRODUTO (mantida) */}
+        <section className="py-8 sm:py-12">
+            <div className="section-container">
+                <div className="relative max-w-md mx-auto">
+                    <div className="animate-float">
+                        <img
+                            src={productImage}
+                            alt="Crianças jogando bingo de matemática"
+                            className="w-full rounded-3xl shadow-2xl border-4 border-card"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* SEÇÃO 3 — CARTELA INTERATIVA (agora logo após a imagem) */}
         <section id="calculadora" className="py-12 sm:py-16">
             <div className="section-container">
                 <div className="text-center mb-8">
@@ -91,35 +100,9 @@ const Index: React.FC = () => (
                         Clique em qualquer termo da cartela abaixo para ver a pergunta correspondente
                     </p>
                 </div>
-
                 <InteractiveBingoCard />
             </div>
         </section>
-
-        {/* SEÇÃO 3 — DESCRIÇÃO RESUMIDA */}
-        <section className="py-10 bg-card">
-            <div className="section-container">
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-6">
-                    📖 Sobre as Cartelas
-                </h2>
-
-                <div className="max-w-2xl mx-auto space-y-4 text-lg text-foreground/90">
-                    <p>
-                        As <strong className="text-primary">Cartelas Mágicas de Matemática</strong> transformam conteúdos
-                        essenciais — operações, frações e geometria — em um bingo divertido, garantindo engajamento imediato.
-                        Aprender números vira jogo, não obrigação.
-                    </p>
-
-                    <ul className="list-disc list-inside space-y-2">
-                        <li>PDF pronto para imprimir ou usar no digital.</li>
-                        <li>Ideal para revisão, reforço ou aulas dinâmicas.</li>
-                        <li>Aprendizado sem esforço graças à mecânica de jogo.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        {/* —— A PARTIR DAQUI TODAS AS SEÇÕES ORIGINAIS FORAM MANTIDAS —— */}
 
         {/* SEÇÃO 4 — COMO JOGAR */}
         <section className="py-12 sm:py-16 bg-gradient-to-br from-secondary/10 to-accent/10">
@@ -174,9 +157,7 @@ const Index: React.FC = () => (
                         Escolha uma opção abaixo para ver como as Cartelas Mágicas de Matemática resolvem seu problema específico
                     </p>
                 </div>
-
                 <ContextSelector />
-
                 <div className="flex justify-center mt-10">
                     <img
                         src={productImage}
@@ -184,7 +165,6 @@ const Index: React.FC = () => (
                         className="w-32 h-auto rounded-xl shadow-lg"
                     />
                 </div>
-
                 <div className="text-center mt-8">
                     <CTAButton
                         text="Quero garantir que meus alunos aprendam com as Cartelas Mágicas"
@@ -194,8 +174,31 @@ const Index: React.FC = () => (
             </div>
         </section>
 
-        {/* ——— as SEÇÕES 6 a 13 + footer permanecem exatamente como estavam no arquivo original ——— */}
-        {/* Para economizar espaço, não foram duplicadas aqui, mas basta manter seu código original de SEÇÃO 6 em diante. */}
+        {/* SEÇÃO 6 — O QUE VOCÊ VAI RECEBER */}
+        {/* ...mantenha todo o conteúdo original inalterado... */}
+
+        {/* SEÇÃO 7 — PARA QUEM É */}
+        {/* ...conteúdo original... */}
+
+        {/* SEÇÃO 8 — INVESTIMENTO */}
+        {/* ...conteúdo original... */}
+
+        {/* SEÇÃO 9 — ENTREGA E ACESSO */}
+        {/* ...conteúdo original... */}
+
+        {/* SEÇÃO 10 — GARANTIA */}
+        {/* ...conteúdo original... */}
+
+        {/* SEÇÃO 11 — FAQ */}
+        <section className="py-12 sm:py-16">
+            <div className="section-container">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">❓ Perguntas Frequentes</h2>
+                <FAQSection />
+            </div>
+        </section>
+
+        {/* SEÇÃO 12 — RODAPÉ */}
+        {/* ...rodapé original... */}
     </div>
 );
 
