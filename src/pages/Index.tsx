@@ -391,11 +391,6 @@ const Index = () => {
       <footer className="py-10 bg-foreground text-background">
         <div className="section-container">
           <div className="flex flex-col items-center text-center">
-            <img 
-              src={logo} 
-              alt="CMCartoons Logo" 
-              className="h-16 w-auto mb-4 brightness-0 invert"
-            />
             
             <p className="text-lg font-semibold mb-2">
               ✨ Cartelas Mágicas de Matemática - O bingo que ensina matemática brincando
