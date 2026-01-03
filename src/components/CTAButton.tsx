@@ -33,7 +33,7 @@ const CTAButton = ({
 
     /* URL base do checkout */
     const baseUrl =
-      "https://pay.hotmart.com/Y103259745G?off=scobwn0k";
+      "https://pay.hotmart.com/Y103259745G?off=scobwn0k&checkoutMode=10";
 
     /* 1. Tenta pegar UTMs da URL atual (página onde o visitante está) */
     const currentUtms = window.location.search.slice(1); // sem '?'
